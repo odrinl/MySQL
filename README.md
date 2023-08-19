@@ -27,14 +27,21 @@ tables to extract data such as:
   Some questions you can ask yourself:
 
 - Which entities can you spot in the above problem ?
+  
   Answer: Recipes, Categories, Ingredients Steps.
 - Which tables do you need to create to store the above data?
+  
   Answer: recipes, categories, ingredients, recipeingredients, steps, recipesteps.
 - What are the relationships between those entities?
+  
   Answer:
+  
   **Recipes** to **Categories**: Many-to-Many (a recipe can belong to multiple categories, and a category can have multiple recipes).
+  
   **Recipes** to **Ingredients**: Many-to-Many (a recipe can have multiple ingredients, and an ingredient can be used in multiple recipes).
+  
   **Recipes** to **Steps**: Many-to-Many (a recipe can have multiple steps, and a step can be part of multiple recipes).
+  
   **RecipeIngredients** and **RecipeSteps** tables serve as junction tables to establish these many-to-many relationships.
 
 

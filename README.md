@@ -24,7 +24,7 @@ tables to extract data such as:
 - You should be able to list all the recipes.
 - You should be able to list recipes under a single category (Salads, Mexican, etc).
 
-## Some questions you can ask yourself:
+## Questions
 
 - Which entities can you spot in the above problem ?
   

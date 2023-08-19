@@ -7,7 +7,7 @@ We suggest you first think of the design of the tables (names, columns, types) a
 statements. That way, you're thinking about the problem you're trying to solve (creating a database that holds data)
 rather than the implementation first (creating a set of SQL statements).
 
-## Exercise
+## Task
 
 Design the tables for a database that contains food recipes.
 

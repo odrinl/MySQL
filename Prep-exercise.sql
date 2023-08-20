@@ -1,14 +1,29 @@
-CREATE TABLE categories (
+CREATE TABLE Categories (
     CategoryID INT PRIMARY KEY AUTO_INCREMENT,
     CategoryName VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE ingredients (
+CREATE TABLE Recipes (
+    RecipeID INT PRIMARY KEY AUTO_INCREMENT,
+    RecipeName VARCHAR(255) NOT NULL,
+    CategoryID INT,
+    FOREIGN KEY (CategoryID) REFERENCES categories (CategoryID)
+);
+
+CREATE TABLE RecipeCategories (
+    RecipeID INT,
+    CategoryID INT,
+    PRIMARY KEY (RecipeID, CategoryID),
+    FOREIGN KEY (RecipeID) REFERENCES recipes (RecipeID),
+    FOREIGN KEY (CategoryID) REFERENCES categories (CategoryID)
+);
+
+CREATE TABLE Ingredients (
     IngredientID INT PRIMARY KEY AUTO_INCREMENT,
     IngredientName VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE recipeingredients (
+CREATE TABLE RecipeIngredients (
     RecipeID INT,
     IngredientID INT,
     PRIMARY KEY (RecipeID, IngredientID),
@@ -16,14 +31,7 @@ CREATE TABLE recipeingredients (
     FOREIGN KEY (IngredientID) REFERENCES ingredients (IngredientID)
 );
 
-CREATE TABLE recipes (
-    RecipeID INT PRIMARY KEY AUTO_INCREMENT,
-    RecipeName VARCHAR(255) NOT NULL,
-    CategoryID INT,
-    FOREIGN KEY (CategoryID) REFERENCES categories (CategoryID)
-);
-
-CREATE TABLE recipesteps (
+CREATE TABLE RecipeSteps (
     RecipeID INT,
     StepID INT,
     StepOrder INT,
@@ -32,7 +40,7 @@ CREATE TABLE recipesteps (
     FOREIGN KEY (StepID) REFERENCES steps (StepID)
 );
 
-CREATE TABLE steps (
+CREATE TABLE Steps (
     StepID INT PRIMARY KEY AUTO_INCREMENT,
     StepDescription TEXT NOT NULL
 );
